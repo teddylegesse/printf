@@ -1,35 +1,23 @@
 #include "main.h"
-/**
- * _printf - print charactor string
- * @format: sepecifaies format string
- * Return: lists of charactor
- */
+
 int _printf(const char *format, ...)
 {
-
-int list = 0, i;
-va_list arg;
-va_start(arg, format);
-for (i = 0; format[i] != '\0';)
-{
-if (format[i] != '%')
-{
-list += _putchar(format[i]);
-i++;
-}
-else if (format[i] == '%' && format[i + 1] != ' ')
-{
-if (format[i + 1] == 'c')
-{
-list += _putchar(va_arg(arg, int));
-}
-if (format[i + 1] == 's')
-list += _print_string(va_arg(arg, char *));
-if (format[i + 1] == '%')
-list += _putchar('%');
-i = i + 2;
-}
-}
-
-return (list);
+        int i, count = 0;
+        va_list args;
+        if (format == NULL)
+                return (-1);
+        va_start(args, format);
+        for (i = 0; format[i] != '\0'; i++)
+        {
+                if (format[i] == '%')
+                {
+                        if (format[i + 1] == 'c')
+                                _putchar(format[i]);
+                        if (format[i + 1] == 's')
+                        _putchar(format[i]);
+                }
+                count += va_arg(args, int);
+        }
+        va_end(args);
+        return (count);
 }
