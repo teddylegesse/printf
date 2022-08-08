@@ -7,4 +7,5 @@ int decimal_print(int n);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _print_string(char *string);
+int integer_print(int n);
 #endif
