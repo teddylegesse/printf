@@ -16,9 +16,10 @@ int decimal_print(int n)
 		count += _putchar(n % 10 + '0');
 	}
 
-	if (count < 0) {
-       putchar('-');
-       count = -count;
-   }
-	return (count);
+if (count < 0)
+{
+putchar('-');
+count = -count;
+}
+return (count);
 }
