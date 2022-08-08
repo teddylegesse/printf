@@ -2,6 +2,7 @@
 /**
  * _printf - print charactor string
  * @format: sepecifaies format string
+ * Return: lists of charactor
  */
 int _printf(const char *format, ...)
 {
@@ -18,16 +19,17 @@ i++;
 }
 else if (format[i] == '%' && format[i + 1] != ' ')
 {
-switch (format[i + 1])
+if (format[i + 1] == 'c')
 {
-	case 'c':
-	list += _putchar(va_arg(arg, int));
-break;
-	default:
-break;
+list += _putchar(va_arg(arg, int));
 }
+if (format[i + 1] == 's')
+list += _print_string(va_arg(arg, char *));
+if (format[i + 1] == '%')
+list += _putchar('%');
 i = i + 2;
 }
 }
+
 return (list);
 }
