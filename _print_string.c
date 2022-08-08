@@ -10,7 +10,7 @@ int _print_string(char *string)
 
 	for (i = 0; string[i] != '\0'; i++)
 	{
-		list += _putchar(string[i]);
+		list += stdout(string[i]);
 	}
 	return (list);
 }

@@ -13,19 +13,19 @@ for (i = 0; format[i] != '\0';)
 {
 if (format[i] != '%')
 {
-list += _putchar(format[i]);
+list += stdout(format[i]);
 i++;
 }
 else if (format[i] == '%' && format[i + 1] != ' ')
 {
 if (format[i + 1] == 'c')
 {
-list += _putchar(va_arg(arg, int));
+list += stdout(va_arg(arg, int));
 }
 if (format[i + 1] == 's')
-list += _print_string(va_arg(arg, char *));
+list += stdout(va_arg(arg, char *));
 if (format[i + 1] == '%')
-list += _putchar('%');
+list += stdout('%');
 if (format[i + 1] == 'd')
 list += decimal_print(va_arg(arg, int));
 if (format[i + 1] == 'i')
