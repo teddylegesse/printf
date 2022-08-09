@@ -36,7 +36,7 @@ return (i);
 int printer_d(va_list d)
 {
 	int count = 0;
-	int i, b;
+	int b;
 
 	b = va_arg(d, int);
 	if (b < 0)
