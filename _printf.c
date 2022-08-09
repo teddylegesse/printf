@@ -16,7 +16,7 @@ int (*choice(const char *format))(va_list)
 	for (i = 0; q[i].a != NULL; i++)
 	{
 		if (*(q[i].a) == *format)
-			break;
+		break;
 	}
 	return (q[i].p);
 }
