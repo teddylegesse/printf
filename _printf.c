@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * choice - specifies the choice
+ * choice - specifies the choices
  * @format: number of args to be passed
  * Return: choices
  */
