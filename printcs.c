@@ -37,29 +37,56 @@ int printer_d(va_list d)
 
 {
 	int count = 0;
+	int b;
 
-	if (d == 0)
+	b = va_arg(d, int);
+	 if (b < 0)
+        {
+              _putchar('-');
+                b = -b;
+        }
+	if (b == 0)
 
 		count += _putchar('0');
 
-	if (d / 10)
+	if (b / 10)
 
 	{
 
-		count += _putchar((d / 10) + '0');
+		count += _putchar((b / 10) + '0');
 
-		count += _putchar(d % 10 + '0');
+		count += _putchar(b % 10 + '0');
 
-	}
-
-	if (count < 0)
-	{
-
-
-		_putchar('-');
-
-		count = -count;
 	}
 
 	return (count);
+}
+
+int printer_i(va_list i)
+
+{
+        int count = 0;
+        int b;
+
+        b = va_arg(i, int);
+         if (b < 0)
+        {
+              _putchar('-');
+                b = -b;
+        }
+        if (b == 0)
+
+                count += _putchar('0');
+
+        if (b / 10)
+
+        {
+
+                count += _putchar((b / 10) + '0');
+
+                count += _putchar(b % 10 + '0');
+
+        }
+
+        return (count);
 }
