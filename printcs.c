@@ -28,3 +28,38 @@ _putchar(ptr[i]);
 }
 return (i);
 }
+/**
+ * printer_d - printes the decimal argument
+ * @d: is the decimal argument
+ * Return: decimal
+ */
+int printer_d(va_list d)
+
+{
+	int count = 0;
+
+	if (d == 0)
+
+		count += _putchar('0');
+
+	if (d / 10)
+
+	{
+
+		count += _putchar((d / 10) + '0');
+
+		count += _putchar(d % 10 + '0');
+
+	}
+
+	if (count < 0)
+	{
+
+
+		_putchar('-');
+
+		count = -count;
+	}
+
+	return (count);
+}
