@@ -10,6 +10,8 @@ int (*choice(const char *format))(va_list)
 	printer q[] = {
 	{"c", printer_c},
 	{"s", printer_s},
+	{"d", printer_d},
+	{"i", printer_i},
 	{NULL, NULL}
 	};
 
@@ -17,6 +19,7 @@ int (*choice(const char *format))(va_list)
 	{
 		if (*(q[i].a) == *format)
 		break;
+
 	}
 	return (q[i].p);
 }

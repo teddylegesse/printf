@@ -14,6 +14,8 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int printer_c(va_list c);
 int printer_s(va_list s);
+int printer_d(va_list d);
+int printer_i(va_list i);
 
 
 

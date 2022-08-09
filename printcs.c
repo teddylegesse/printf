@@ -34,59 +34,47 @@ return (i);
  * Return: decimal
  */
 int printer_d(va_list d)
+{
+	int count = 0;
+	int i, b;
 
+	b = va_arg(d, int);
+	if (b < 0)
+	{
+		_putchar('-');
+		b = -b;
+	}
+	if (b == 0)
+		count += _putchar('0');
+	if (b / 10)
+	{
+		count += _putchar((b / 10) + '0');
+		count += _putchar(b % 10 + '0');
+	}
+	return (count);
+}
+/**
+ * printer_i - prints interger
+ * @i: value passed
+ * Return: length
+ */
+int printer_i(va_list i)
 {
 	int count = 0;
 	int b;
 
-	b = va_arg(d, int);
-	 if (b < 0)
-        {
-              _putchar('-');
-                b = -b;
-        }
-	if (b == 0)
-
-		count += _putchar('0');
-
-	if (b / 10)
-
+	b = va_arg(i, int);
+	if (b < 0)
 	{
-
-		count += _putchar((b / 10) + '0');
-
-		count += _putchar(b % 10 + '0');
-
+		_putchar('-');
+		b = -b;
 	}
-
+	if (b == 0)
+		count += _putchar('0');
+	if (b / 10)
+	{
+		count += _putchar((b / 10) + '0');
+		count += _putchar(b % 10 + '0');
+	}
 	return (count);
-}
-
-int printer_i(va_list i)
-
-{
-        int count = 0;
-        int b;
-
-        b = va_arg(i, int);
-         if (b < 0)
-        {
-              _putchar('-');
-                b = -b;
-        }
-        if (b == 0)
-
-                count += _putchar('0');
-
-        if (b / 10)
-
-        {
-
-                count += _putchar((b / 10) + '0');
-
-                count += _putchar(b % 10 + '0');
-
-        }
-
-        return (count);
 }
