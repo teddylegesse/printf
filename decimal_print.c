@@ -8,17 +8,18 @@ int decimal_print(int n)
 {
 	int count = 0;
 
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
 	if (n == 0)
-		count += _putchar('0');
+		count += stdout('0');
 	if (n / 10)
 	{
-		count += _putchar((n / 10) + '0');
-		count += _putchar(n % 10 + '0');
+		count += stdout((n / 10) + '0');
+		count += stdout(n % 10 + '0');
 	}
-	return (count);
+
+if (count < 0)
+{
+stdout('-');
+count = -count;
+}
+return (count);
 }
