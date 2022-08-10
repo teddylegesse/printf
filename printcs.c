@@ -38,7 +38,7 @@ va_end(s);
 int printer_d(va_list d)
 {
 	int count = 0;
-	unsigned int b;
+	int b;
 
 	b = va_arg(d, int);
 	if (b < 0)
@@ -64,7 +64,7 @@ int printer_d(va_list d)
 int printer_i(va_list i)
 {
 	int count = 0;
-	unsigned int b;
+	int b;
 
 	b = va_arg(i, int);
 	if (b < 0)
