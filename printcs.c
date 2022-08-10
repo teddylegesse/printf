@@ -9,6 +9,7 @@ int printer_c(va_list c)
 char a;
 a = (char)va_arg(c, int);
 _putchar(a);
+va_end(c);
 return (1);
 }
 
@@ -27,6 +28,7 @@ for (i = 0; ptr[i]; i++)
 _putchar(ptr[i]);
 }
 return (i);
+va_end(s);
 }
 /**
  * printer_d - printes the decimal argument
@@ -51,6 +53,7 @@ int printer_d(va_list d)
 		count += _putchar((b / 10) + '0');
 		count += _putchar(b % 10 + '0');
 	}
+	va_end(d);
 	return (count);
 }
 /**
@@ -76,5 +79,6 @@ int printer_i(va_list i)
 		count += _putchar((b / 10) + '0');
 		count += _putchar(b % 10 + '0');
 	}
+	va_end(i);
 	return (count);
 }
