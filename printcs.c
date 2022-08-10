@@ -42,7 +42,7 @@ int printer_d(va_list d)
 	if (b < 0)
 	{
 		_putchar('-');
-		b = -b;
+		count = -b;
 	}
 	if (b == 0)
 		count += _putchar('0');
@@ -67,7 +67,7 @@ int printer_i(va_list i)
 	if (b < 0)
 	{
 		_putchar('-');
-		b = -b;
+		count = -b;
 	}
 	if (b == 0)
 		count += _putchar('0');
