@@ -27,8 +27,8 @@ for (i = 0; ptr[i]; i++)
 {
 _putchar(ptr[i]);
 }
-va_end(s);
 return (i);
+va_end(s);
 }
 /**
  * printer_d - printes the decimal argument
