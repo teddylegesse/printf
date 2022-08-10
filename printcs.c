@@ -37,14 +37,17 @@ va_end(s);
  */
 int printer_d(va_list d)
 {
-	int count = 0;
-	int b;
+	int count = 0, c;
+	unsigned int b;
 
 	b = va_arg(d, int);
-	if (b < 0)
+	c = b;
+	if (c < 0)
 	{
 		_putchar('-');
-		count = -b;
+		c = c * -1;
+		b = c;
+		count++;
 	}
 	if (b == 0)
 		count += _putchar('0');
@@ -64,13 +67,14 @@ int printer_d(va_list d)
 int printer_i(va_list i)
 {
 	int count = 0;
-	int b;
+	unsigned int b;
 
 	b = va_arg(i, int);
 	if (b < 0)
 	{
 		_putchar('-');
-		count = -b;
+		b = b * -1;
+		count++;
 	}
 	if (b == 0)
 		count += _putchar('0');
